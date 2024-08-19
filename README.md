@@ -1,13 +1,62 @@
-# Sample Hardhat Project
+# Voting Smart Contract Solidity
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+## Description
 
-Try running some of the following tasks:
+This repository contains a Hardhat project for a decentralized voting system smart contract. The `Voting` contract uses OpenZeppelin's `Ownable` for ownership management and supports candidate registration, voting, and winner determination. The project includes deployment scripts using Hardhat Ignition and testing.
 
-```shell
-npx hardhat help
+## Features
+
+- **Candidate Registration**: Add and manage candidates.
+- **Voting**: Users can vote for candidates.
+- **Winner Determination**: Determine the candidate with the most votes.
+- **Deployment**: Uses Hardhat Ignition for deployment.
+- **Testing**: Includes tests to verify contract functionality.
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- [Hardhat](https://hardhat.org/)
+- [OpenZeppelin Contracts](https://docs.openzeppelin.com/contracts/4.x/)
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/hardhat-voting-system.git
+    cd hardhat-voting-system
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+### Running Tests
+
+Run the following command to execute tests:
+
+```bash
 npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
+
+### Deployment
+
+Deploy the contract to a local Hardhat network:
+
+1. Start Hardhat Network:
+
+    ```bash
+    npx hardhat node
+    ```
+
+2. Deploy Contract:
+
+    In a new terminal, run:
+
+    ```bash
+    npx hardhat ignition deploy ./ignition/modules/VotingSystem.js --network localhost
+    ```
