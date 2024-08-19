@@ -7,13 +7,12 @@ describe("Voting", function () {
     let owner;
     let addr1;
     let addr2;
-    let addrs;
 
 
     beforeEach(async function (){
         // get signer and contract factory
         Voting = await ethers.getContractFactory("Voting");
-        [owner, addr1, addr2, ...addrs] = await ethers.getSigners();
+        [owner, addr1, addr2] = await ethers.getSigners();
 
 
         // Deploy a new VotingSystem contract before each test.
@@ -31,7 +30,7 @@ describe("Voting", function () {
         });
       });
     
-      describe("Voting", function () {
+    describe("Voting", function () {
         it("Should allow users to vote and update vote counts", async function () {
           await voting.startVoting();
     
